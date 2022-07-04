@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Authentication App',
+      title: 'Google Authentication App',
       routes: routes,
       initialRoute: Routes.home.name,
     );
