@@ -1,3 +1,4 @@
+import 'package:auth_app/services/services.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,7 +25,9 @@ class SignInButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         onPressed: () {
-          // TODO: Sign in with Google or Apple
+          if (type == SignInType.google) {
+            GoogleSignInService.singInWithGoogle();
+          }
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

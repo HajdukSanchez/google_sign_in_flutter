@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:auth_app/enums/enums.dart';
 import 'package:auth_app/widgets/widgets.dart';
+import 'package:auth_app/services/services.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                // TODO: Sign out
+                GoogleSignInService.signOutGoogle();
               },
               icon: const Icon(FontAwesomeIcons.arrowRightFromBracket))
         ],
