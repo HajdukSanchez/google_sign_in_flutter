@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:google_sign_in/google_sign_in.dart';
 
-class GoogleSignInService {
+class GoogleSignInService with ChangeNotifier {
   static final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email'],
   );
@@ -8,6 +10,7 @@ class GoogleSignInService {
   static Future<GoogleSignInAccount?> singInWithGoogle() async {
     try {
       final GoogleSignInAccount? account = await _googleSignIn.signIn();
+      final googleKey = await account?.authentication;
       return account;
     } catch (e) {
       return null;
